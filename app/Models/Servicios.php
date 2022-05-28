@@ -24,4 +24,12 @@ class Servicios extends Model
     public function trailer(){
         return $this->hasOne(Camiones::class,'id', 'camiones_id');
     }
+
+    public function bitacora(){
+        return $this->hasMany(BitacoraServicios::class,'servicios_id', 'id');
+    }
+
+    public function estatus(){
+        return $this->hasOne(EstatusServicio::class, 'id', 'estatus_id');
+    }
 }

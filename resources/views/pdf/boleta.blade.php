@@ -81,15 +81,41 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-xs-8">
-        <b style="font-size: 18px">PILOTO: {{$servicio->piloto->nombre}}</b> <br>
-        <b style="font-size: 18px">PLACA: {{$servicio->trailer->placa}}</b><br>
-        <b style="font-size: 18px">MARCA: {{$servicio->trailer->marca}}</b><br>
-        <b style="font-size: 18px">PLACA CHASSIS: {{$servicio->placa_chassis}}</b>
+    <div class="col-xs-6">
+        <span style="font-size: 18px; margin-top:5px; line-height: 15px; color: #343452;">PILOTO: {{$servicio->piloto->nombre}}</span> <br>
+        <span style="font-size: 18px; margin-top:5px; line-height: 15px;">PLACA CAMION: {{$servicio->trailer->placa}}</span><br>
+        <span style="font-size: 18px; margin-top:5px; line-height: 15px;">MARCA: {{$servicio->trailer->marca}}</span><br>
+        <span style="font-size: 18px; margin-top:5px;">PLACA CHASSIS: {{$servicio->placa_chassis}}</span>
         <br>
-        <b style="font-size: 18px">FECHA: {{$servicio->created_at}}</b>
+        <b style="font-size: 18px; margin-top:5px;">FECHA: {{$servicio->created_at}}</b>
+    </div>
+    <div class="col-xs-4">
+        <span style="font-size: 18px; margin-top:5px;">OBSERVACIONES: {{$servicio->observaciones}}</span> <br><br>
+        <span style="font-size: 18px; margin-top:5px;">ESTADO: {{$servicio->estatus->descripcion}}</span><br><br>
     </div>
 </div>
 <div class="bg-azul"></div>
+<span>BITACORA:</span>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">FECHA</th>
+        <th scope="col">ESTATUS</th>
+        <th scope="col">PREDIO</th>
+        <th scope="col">REGISTRADO POR</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach($servicio->bitacora as $bitacora)
+        <tr>
+            <th>{{$bitacora->created_at}}</th>
+            <th>{{$bitacora->estatus->descripcion}}</th>
+            <th>{{$bitacora->predio->nombre}}</th>
+            <th>{{$bitacora->user->name}}</th>
+        </tr>
+    @endforeach
+    </tbody>
+</table>
+
 </body>
 </html>
