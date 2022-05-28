@@ -17,6 +17,7 @@
                     <th scope="col">NAVIERA</th>
                     <th scope="col">PREDIO</th>
                     <th scope="col">PLACA</th>
+                    <th scope="col">ESTATUS</th>
                     <th scope="col">FECHA_INGRESO</th>
                     <th scope="col">BOLETA</th>
                 </tr>
@@ -30,6 +31,7 @@
                         <td>{{$servicio->naviera->nombre}}</td>
                         <td>{{$servicio->predio->nombre}}</td>
                         <td>{{$servicio->trailer->placa}}</td>
+                        <td>{{$servicio->estatus->descripcion}}</td>
                         <td>{{$servicio->created_at}}</td>
                         <td><a href="{{route('pdf.boleta', encrypt($servicio->id))}}" target="_blank" class="btn btn-primary">Ver</a></td>
                     </tr>
