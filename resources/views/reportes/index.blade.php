@@ -15,17 +15,23 @@
                     <th scope="col">CONTENEDOR</th>
                     <th scope="col">PILOTO</th>
                     <th scope="col">NAVIERA</th>
+                    <th scope="col">PREDIO</th>
                     <th scope="col">PLACA</th>
                     <th scope="col">FECHA_INGRESO</th>
                     <th scope="col">BOLETA</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($predios as $predio)
+                @foreach($servicios as $servicio)
                     <tr>
                         <td>{{ $loop->iteration}}</td>
-                        <td>{{$predio->nombre}}</td>
-                        <td>{{$predio->direccion}}</td>
+                        <td>{{$servicio->numero_contenedor}}</td>
+                        <td>{{$servicio->piloto->nombre}}</td>
+                        <td>{{$servicio->naviera->nombre}}</td>
+                        <td>{{$servicio->predio->nombre}}</td>
+                        <td>{{$servicio->trailer->placa}}</td>
+                        <td>{{$servicio->created_at}}</td>
+                        <td><a href="{{route('pdf.boleta', encrypt($servicio->id))}}" target="_blank" class="btn btn-primary">Ver</a></td>
                     </tr>
                 @endforeach
                 </tbody>

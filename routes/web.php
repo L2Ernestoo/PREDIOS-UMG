@@ -32,6 +32,8 @@ Route::get('reporte-servicios', [\App\Http\Controllers\ServicioController::class
 Route::post('ingresar', [\App\Http\Controllers\ServicioController::class,'storeIngreso'])->name('store.ingreso');
 Route::post('despachar', [\App\Http\Controllers\ServicioController::class,'storeDespachar'])->name('store.despachar');
 
+Route::get('/pdf-boleta/{id}', [\App\Http\Controllers\ServicioController::class,'pdf'])->name('pdf.boleta');
+
 //Camiones
 Route::get('camiones', [\App\Http\Controllers\CamionesController::class,'index'])->name('index.camiones');
 

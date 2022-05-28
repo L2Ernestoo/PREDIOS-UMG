@@ -61,7 +61,7 @@ class ServicioController extends Controller
 
     }
 
-    public function reportes(){
+    public function reporte(){
         $servicios = Servicios::with('naviera')->get();
 
         return view('reportes.index', compact('servicios'));
@@ -76,6 +76,6 @@ class ServicioController extends Controller
 
         return PDF::loadHTML($view)
             ->setPaper('letter')
-            ->download('TRANSPORTE-PESADO-'.$servicio->id.'.pdf');
+            ->stream('TRANSPORTE-PESADO-'.$servicio->id.'.pdf');
     }
 }
