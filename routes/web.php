@@ -29,6 +29,9 @@ Route::get('ingreso', [\App\Http\Controllers\ServicioController::class,'ingreso'
 Route::get('despacho', [\App\Http\Controllers\ServicioController::class,'despacho'])->name('despacho.servicios');
 Route::get('reporte-servicios', [\App\Http\Controllers\ServicioController::class,'reporte'])->name('reporte.servicios');
 
+Route::post('ingresar', [\App\Http\Controllers\ServicioController::class,'storeIngreso'])->name('store.ingreso');
+Route::post('despachar', [\App\Http\Controllers\ServicioController::class,'storeDespachar'])->name('store.despachar');
+
 //Camiones
 Route::get('camiones', [\App\Http\Controllers\CamionesController::class,'index'])->name('index.camiones');
 
