@@ -88,7 +88,18 @@
                                 Predio
                             </a>
                             <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item " href="{{route('parking.index')}}">Ver Predio</a></li>
+                                <li><a class="dropdown-item " href="{{route('index.predios')}}">Ver Predio</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                SERVICIOS
+                            </a>
+                            <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item " href="{{route('reporte.servicios')}}">REPORTE</a></li>
+                                <li><a class="dropdown-item " href="{{route('ingreso.servicios')}}">INGRESO</a></li>
+                                <li><a class="dropdown-item " href="{{route('despacho.servicios')}}">DESPACHO</a></li>
                             </ul>
                         </li>
 

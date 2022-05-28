@@ -20,6 +20,24 @@ Route:: view('/','auth.login');
 //Administrador
 //Usuario
 Route:: view('/usuario','auth.register');
+
+//Predios
+Route::get('predios', [\App\Http\Controllers\PrediosController::class,'index'])->name('index.predios');
+
+//Servicios
+Route::get('ingreso', [\App\Http\Controllers\ServicioController::class,'ingreso'])->name('ingreso.servicios');
+Route::get('despacho', [\App\Http\Controllers\ServicioController::class,'despacho'])->name('despacho.servicios');
+Route::get('reporte-servicios', [\App\Http\Controllers\ServicioController::class,'reporte'])->name('reporte.servicios');
+
+//Camiones
+Route::get('camiones', [\App\Http\Controllers\CamionesController::class,'index'])->name('index.camiones');
+
+//Navieras
+Route::get('navieras', [\App\Http\Controllers\NavierasController::class, 'index'])->name('index.navieras');
+
+
+
+
 Route::get( '/listarUsuario', [\App\Http\Controllers\UserController::class, 'usuario' ] )->name('customer.usuario');
 route::delete("/delete_User/{id}",[\App\Http\Controllers\UserController::class,'delete_user'])->name('delete_User');
 // vista de inicio
