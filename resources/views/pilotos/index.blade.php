@@ -4,7 +4,7 @@
 
 
     <div class="p-3 bg-white mb-5">
-        <h3 class="text-center">pILOTOS</h3>
+        <h3 class="text-center">PILOTOS</h3>
         <div class="table-responsive">
             <table class="table table-striped text-center" id="datos">
                 <thead>
