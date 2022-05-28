@@ -41,6 +41,9 @@ Route::get('/pdf-boleta/{id}', [\App\Http\Controllers\ServicioController::class,
 
 //Camiones
 Route::get('camiones', [\App\Http\Controllers\CamionesController::class,'index'])->name('index.camiones');
+Route::get('crear-camion', [\App\Http\Controllers\CamionesController::class,'create'])->name('crear.camiones');
+Route::POST('guardar-camion', [\App\Http\Controllers\CamionesController::class,'store'])->name('store.camiones');
+
 
 //Navieras
 Route::get('navieras', [\App\Http\Controllers\NavierasController::class, 'index'])->name('index.navieras');

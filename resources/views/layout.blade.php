@@ -79,6 +79,8 @@
                                 <li><a class="dropdown-item " href="{{route('customer.usuario')}}"> Ver registro Usuario</a></li>
                                 <li><a class="dropdown-item " href="{{route('ver.pilotos')}}"> Pilotos</a></li>
                                 <li><a class="dropdown-item " href="{{route('crear.piloto')}}"> Registrar Pilotos</a></li>
+                                <li><a class="dropdown-item " href="{{route('index.camiones')}}"> Camiones</a></li>
+                                <li><a class="dropdown-item " href="{{route('crear.camiones')}}"> Registrar Camiones</a></li>
                             </ul>
 
                         </li>
