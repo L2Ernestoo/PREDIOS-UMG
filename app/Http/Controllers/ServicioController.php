@@ -23,9 +23,12 @@ class ServicioController extends Controller
     }
 
     public function despacho(){
-
-
-        return view('servicios.despacho');
+        $navieras = Navieras::all();
+        $pilotos = Pilotos::all();
+        $predios = Predios::all();
+        $camiones = Camiones::all();
+        $servicios = Servicios::where('estatus_id', 1)->get();
+        return view('servicios.despacho', compact('navieras','pilotos','predios','camiones','servicios'));
     }
 
     public function storeIngreso(Request $request){
@@ -58,6 +61,28 @@ class ServicioController extends Controller
         return PDF::loadHTML($view)
             ->setPaper('letter')
             ->download('TRANSPORTE-PESADO-'.$servicio->id.'.pdf');
+
+    }
+
+    public function storeDespacho(Request $request){
+
+        $bitacora = new BitacoraServicios;
+        $bitacora->servicios_id = $request->numero_servicio;
+        $bitacora->estatus_servicios_id = 2;
+        $bitacora->predios_id = $request->predio;
+        $bitacora->users_id = Auth::user()->id;
+        $bitacora->save();
+
+        $servicio = Servicios::with('naviera')->where('id',$request->numero_servicio)->first();
+        $servicio->estatus_id = 2;
+        $servicio->save();
+
+        $view = view('pdf.boleta', compact('servicio'));
+        PDF::setOptions(['isRemoteEnabled' => true]);
+
+        return PDF::loadHTML($view)
+            ->setPaper('letter')
+            ->download('TRANSPORTE-PESADO-DESPACHADO-'.$servicio->id.'.pdf');
 
     }
 

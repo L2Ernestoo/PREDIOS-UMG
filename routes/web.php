@@ -30,7 +30,7 @@ Route::get('despacho', [\App\Http\Controllers\ServicioController::class,'despach
 Route::get('reporte-servicios', [\App\Http\Controllers\ServicioController::class,'reporte'])->name('reporte.servicios');
 
 Route::post('ingresar', [\App\Http\Controllers\ServicioController::class,'storeIngreso'])->name('store.ingreso');
-Route::post('despachar', [\App\Http\Controllers\ServicioController::class,'storeDespachar'])->name('store.despachar');
+Route::post('despachar', [\App\Http\Controllers\ServicioController::class,'storeDespacho'])->name('store.despacho');
 
 Route::get('/pdf-boleta/{id}', [\App\Http\Controllers\ServicioController::class,'pdf'])->name('pdf.boleta');
 
