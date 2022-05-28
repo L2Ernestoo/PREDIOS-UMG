@@ -14,6 +14,13 @@ use Illuminate\Support\Facades\Auth;
 
 class ServicioController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     public function ingreso(){
         $navieras = Navieras::all();
         $pilotos = Pilotos::all();

@@ -21,6 +21,11 @@ Route:: view('/','auth.login');
 //Usuario
 Route:: view('/usuario','auth.register');
 
+//Piloto
+Route::get('crear-piloto',[\App\Http\Controllers\PilotosController::class, 'crearPiloto'])->name('crear.piloto');
+Route::get('pilotos',[\App\Http\Controllers\PilotosController::class, 'index'])->name('ver.pilotos');
+Route::post('store-piloto',[\App\Http\Controllers\PilotosController::class, 'storePiloto'])->name('store.piloto');
+
 //Predios
 Route::get('predios', [\App\Http\Controllers\PrediosController::class,'index'])->name('index.predios');
 
