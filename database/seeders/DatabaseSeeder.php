@@ -16,6 +16,12 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(CustomerSeeder::class);
         $this->call(UserSeeder::class);
+        $this->call(CamionesSeed::class);
+        $this->call(EstatusServiciosSeed::class);
+        $this->call(NavierasSeed::class);
+        $this->call(PilotosSeed::class);
+        $this->call(PrediosSeed::class);
+
         Customer::factory(10)->create();
     }
 }

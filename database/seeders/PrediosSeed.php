@@ -16,17 +16,17 @@ class PrediosSeed extends Seeder
     {
         $predio = new Predios;
         $predio->nombre = 'EL THOR';
-        $predio->direccio = 'Asgard Nueva Generacion';
+        $predio->direccion = 'Asgard Nueva Generacion';
         $predio->save();
 
         $predio = new Predios;
         $predio->nombre = 'MUELLE PUERTO BARRIOS';
-        $predio->direccio = 'MUELLE PUERTO BARRIOS';
+        $predio->direccion = 'MUELLE PUERTO BARRIOS';
         $predio->save();
 
         $predio = new Predios;
         $predio->nombre = 'PREDIO STORM';
-        $predio->direccio = 'Mjolnir 14 calle';
+        $predio->direccion = 'Mjolnir 14 calle';
         $predio->save();
     }
 }
