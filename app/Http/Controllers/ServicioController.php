@@ -60,4 +60,22 @@ class ServicioController extends Controller
             ->download('TRANSPORTE-PESADO-'.$servicio->id.'.pdf');
 
     }
+
+    public function reportes(){
+        $servicios = Servicios::with('naviera')->get();
+
+        return view('reportes.index', compact('servicios'));
+    }
+
+    public function pdf($id){
+        $id = decrypt($id);
+        $servicio = Servicios::with('naviera')->where('id',$id)->first();
+
+        $view = view('pdf.boleta', compact('servicio'));
+        PDF::setOptions(['isRemoteEnabled' => true]);
+
+        return PDF::loadHTML($view)
+            ->setPaper('letter')
+            ->download('TRANSPORTE-PESADO-'.$servicio->id.'.pdf');
+    }
 }
