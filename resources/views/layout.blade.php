@@ -77,7 +77,8 @@
                             <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item " href="/usuario">Crear Usuario</a></li>
                                 <li><a class="dropdown-item " href="{{route('customer.usuario')}}"> Ver registro Usuario</a></li>
-                                <li><a class="dropdown-item " href="{{route('service.index')}}"> Servicio</a></li>
+                                <li><a class="dropdown-item " href="{{route('ver.pilotos')}}"> Pilotos</a></li>
+                                <li><a class="dropdown-item " href="{{route('crear.piloto')}}"> Registrar Pilotos</a></li>
                             </ul>
 
                         </li>
